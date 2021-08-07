@@ -3,3 +3,12 @@ Observer
 
 Singleton
 - https://stackoverflow.com/questions/1479319/simplest-cleanest-way-to-implement-a-singleton-in-javascript
+
+Factory Method
+- PENDING
+
+Builder
+- PENDING
+
+Facade
+- PENDING
