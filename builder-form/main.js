@@ -18,12 +18,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
         // An async method return a promise that needs to be threated with then 
-        PostRepository.save(post).then(response => response.json())
-        .then(json => {
-            alert(`Post: ${json.post.title} has ben saved with id: ${json.id}`)
-        })
-        .catch(error => {
-            alert("could save post")
-        })
+        PostRepository.save(post)
+            .then(response => response.json())
+            .then(json => {
+                alert(`Post: ${json.post.title} has ben saved with id: ${json.id}`)
+            })
+            .catch(error => {
+                alert("could save post")
+            })
     })
 })
