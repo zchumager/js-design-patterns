@@ -68,11 +68,11 @@ class PostRepository {
     static endpoint = "https://jsonplaceholder.typicode.com/posts"
 
     static async save(post) {
-        let body = JSON.stringify(post)
+        let payload = JSON.stringify(post)
 
         let response = await fetch(this.endpoint, {
             method: 'POST',
-            body: body,
+            body: payload,
             headers: {
                 'Content-Type': 'application/json; charset=UTF-8'
             }
