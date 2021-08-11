@@ -43,19 +43,23 @@ class ItemsList extends Observer {
 
         this.subject.items.forEach(item => {
             let articleTag = document.createElement("article")
-            let articleLabel = document.createElement("label")
-            let priceLabel = document.createElement("label")
-            let separatorLabel = document.createElement("label")
+            let articleLbl = document.createElement("label")
+            let priceLbl = document.createElement("label")
+            let separatorLbl = document.createElement("label")
 
-            articleLabel.innerHTML = item.article
-            priceLabel.innerHTML = parseFloat(item.price)
-            separatorLabel.innerHTML = " : "
+            articleLbl.innerHTML = item.article
+            priceLbl.innerHTML = `$ ${parseFloat(item.price)}`
+            separatorLbl.innerHTML = " : "
 
-            articleTag.appendChild(articleLabel)
-            articleTag.appendChild(separatorLabel)
-            articleTag.appendChild(priceLabel)
+            this.appendChilds(articleTag, articleLbl, separatorLbl, priceLbl)
 
             this.tag.appendChild(articleTag)
+        })
+    }
+
+    appendChilds(div, ...childs) {
+        childs.forEach(child => {
+            div.appendChild(child)
         })
     }
 }
@@ -66,6 +70,6 @@ class PriceCounter extends Observer{
 
         let total = this.subject.items.reduce((counter, current) => counter + parseFloat(current.price), 0)
         
-        this.tag.innerHTML = total
+        this.tag.innerHTML = `Total $ ${total}`
     }
 }

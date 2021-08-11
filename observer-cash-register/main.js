@@ -11,11 +11,17 @@ document.addEventListener("DOMContentLoaded", function() {
     purchase.attach(priceCounter)
 
     addBtn.addEventListener("click", () => {
-        item = {
-            'article': articleTxt.value,
-            'price': priceTxt.value
-        }
 
-        purchase.addItem(item)
+        let article = articleTxt.value
+        let price = priceTxt.value
+
+        if (article && price) {
+            item = {
+                'article': article,
+                'price': price
+            }
+    
+            purchase.addItem(item)
+        }
     })
 })
