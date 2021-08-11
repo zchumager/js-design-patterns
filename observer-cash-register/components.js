@@ -2,10 +2,6 @@ class Observer {
     constructor(tag) {
         this.tag = tag
     }
-
-    update() {
-        console.log("TO BE IMPLEMENTED")
-    }
 }
 
 class Subject {
