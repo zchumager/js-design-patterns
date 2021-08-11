@@ -31,6 +31,11 @@ class Purchase extends Subject {
         this.items.push(item)
         this.notify()
     }
+
+    removeItem(item) {
+        this.items = this.items.filter(element => element !== item)
+        this.notify()
+    }
 }
 
 class ItemsList extends Observer {
@@ -40,16 +45,25 @@ class ItemsList extends Observer {
         this.subject.items.forEach(item => {
             let articleTag = document.createElement("article")
             let articleLbl = document.createElement("label")
-            let priceLbl = document.createElement("label")
             let separatorLbl = document.createElement("label")
+            let priceLbl = document.createElement("label")
+            let removeBtn = document.createElement("button")
 
             articleLbl.innerHTML = item.article
             priceLbl.innerHTML = `$ ${parseFloat(item.price)}`
             separatorLbl.innerHTML = " : "
+            removeBtn.innerHTML = "X"
 
-            this.appendChilds(articleTag, articleLbl, separatorLbl, priceLbl)
-
+            this.appendChilds(articleTag, articleLbl, separatorLbl, priceLbl, removeBtn)
             this.tag.appendChild(articleTag)
+
+            /*
+                The context of 'this' inside an arrow function is the instance not the 
+                button because arrow functions do not change the context of word 'this'
+            */
+            removeBtn.addEventListener("click", evt => {
+                this.subject.removeItem(item)
+            })
         })
     }
 
