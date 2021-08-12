@@ -14,5 +14,8 @@ just single responsability
 Factory Method
 - PENDING
 
+- Adapter
+PENDING
+
 Facade
 - PENDING
