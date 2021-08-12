@@ -1,4 +1,4 @@
-## Creation Patterns
+## Creational Patterns
 
 Singleton
 - https://stackoverflow.com/questions/1479319/simplest-cleanest-way-to-implement-a-singleton-in-javascript
@@ -14,7 +14,7 @@ Factory Method
 - PENDING
 
 ---
-## Behavior Pattern
+## Behavioral Pattern
 
 Observer
 - http://migranitodejava.blogspot.com/2011/06/observer.html
