@@ -1,3 +1,5 @@
+## Creation Patterns
+
 Singleton
 - https://stackoverflow.com/questions/1479319/simplest-cleanest-way-to-implement-a-singleton-in-javascript
 
@@ -11,10 +13,18 @@ just single responsability
 Factory Method
 - PENDING
 
+---
+## Behavior Pattern
+
 Observer
 - http://migranitodejava.blogspot.com/2011/06/observer.html
 
 - The observer should have a reference to the subject in order to get any related attribute working as state
+
+
+---
+
+## Structural Pattern
 
 - Adapter
 PENDING
